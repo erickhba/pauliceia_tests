@@ -9,3 +9,5 @@ Os testes incluem:
 - Apagar camadas
 
 A log da ultima execução está no arquivo "execucao_testes.log".
+
+Os testes estão apontando para a url 'http://localhost:8080' que é onde o frontend roda em ambiente de desenvolvimento.
