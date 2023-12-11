@@ -1,0 +1,65 @@
+# language: pt
+# encoding: utf-8
+Funcionalidade: Controle de Camada
+
+  Contexto:                                                                                 # features/camada.feature:5
+    Dado que eu visito o site do pauliceia "https://pauliceia.unifesp.br/portal/home"       # features/step_definitions/camada.rb:1
+    E faço login com minha conta com email "isael.lucas@usp.br" e senha "[senha_utilizada]" # features/step_definitions/camada.rb:5
+    E consigo entrar no painel de camada no botao de navegação                              # features/step_definitions/camada.rb:25
+
+  Cenário: Criar uma camada no pauliceia                                            # features/camada.feature:11
+    Dado que eu visito o painel de criação de camada                                # features/camada.feature:12
+    Quando eu preencher o campo da camada com o nome <nome> e descricao <descricao> # features/camada.feature:13
+    E adicionar referencia "referencias teste"                                      # features/camada.feature:14
+    E utilizar a palavra chave "EACH"                                               # features/camada.feature:15
+    E selecionar o colaborador "testeEACH"                                          # features/camada.feature:16
+    E subir o arquivo de entrada <arq_entrada>                                      # features/camada.feature:17
+    E clicar no botão para enviar                                                   # features/camada.feature:18
+    E preencher a coluna de data: <data_col> com formato <mascara>                  # features/camada.feature:19
+    E clicar em enviar novamente                                                    # features/camada.feature:20
+    Então minha camada vai ter sido criada                                          # features/camada.feature:21
+
+    Exemplos: 
+      | nome                | descricao              | arq_entrada                | data_col     | mascara        |
+      | 'Camada de teste 1' | 'descricao do teste 1' | 'teste linha 1930-1940'    | 'data'       | 'YYYY-MM-DD'   |
+      | 'Camada de teste 2' | 'descricao do teste 2' | 'TESTE PONTOS 1930-1940'   | 'data'       | 'YYYY-MM-DD'   |
+
+  Cenário: Editar uma camada no pauliceia                # features/camada.feature:29
+    Dado que eu tenha uma camada <nome> no pauliceia     # features/camada.feature:30
+    Quando eu clicar no botão de editar a camada <nome>  # features/camada.feature:31
+    E conseguir acessar o formulario dessa camada        # features/camada.feature:32
+    Então consigo editar a camada e seus dados temporais # features/camada.feature:33
+
+    Exemplos: 
+      | nome                |
+      | 'Camada de teste 1' |
+      | 'Camada de teste 2' |
+
+  Cenário: Apagar uma camada no pauliceia                # features/camada.feature:40
+    Dado que eu tenha uma camada <nome> no pauliceia     # features/camada.feature:41
+    Quando eu clicar no botão de excluir a camada <nome> # features/camada.feature:42
+    Então minha camada <nome> vai ser excluida           # features/camada.feature:43
+
+    Exemplos: 
+      | nome                |
+      | 'Camada de teste 1' |
+      | 'Camada de teste 2' |
+
+# language: pt
+Funcionalidade: Login e Logout
+
+  Cenário: Fazer login e logout no pauliceia                                  # features/login_e_logout.feature:5
+    Dado que eu visito o site "https://pauliceia.unifesp.br/portal/login"     # features/login_e_logout.feature:6
+    Quando eu preencher o campo de email com <email> e o de senha com <senha> # features/login_e_logout.feature:7
+    E clicar no botão para entrar                                             # features/login_e_logout.feature:8
+    Então meu usuario vai ser autenticado                                     # features/login_e_logout.feature:9
+    Quando eu clicar no botão de sair                                         # features/login_e_logout.feature:10
+    Então meu usuario vai sair                                                # features/login_e_logout.feature:11
+
+    Exemplos: 
+      | email                   | senha           |
+      | 'isael.lucas@usp.br'    | '[senha_utilizada]'  |
+
+7 scenarios (7 passed)
+58 steps (58 passed)
+1m46.377s
