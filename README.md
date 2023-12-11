@@ -1,6 +1,10 @@
 # pauliceia_tests
 Esse repositório contém alguns testes de aceitação para o projeto Pauliceia 2.0.
 
+Utilizamos duas abordagens diferentes na elaboração dos testes, uma utiliza a linguagem ruby e outra utiliza javascript.
+
+Os testes estão apontando para a url 'http://localhost:8080' que é onde o frontend roda em ambiente de desenvolvimento.
+
 Autores:
 
 - Isael Lucas Grob Rocha 11796764
