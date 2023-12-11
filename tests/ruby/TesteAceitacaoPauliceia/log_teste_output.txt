@@ -57,7 +57,7 @@ Funcionalidade: Login e Logout
     Então meu usuario vai sair                                                # features/login_e_logout.feature:11
 
     Exemplos: 
-      | email                   | senha           |
+      | email                   | senha                |
       | 'isael.lucas@usp.br'    | '[senha_utilizada]'  |
 
 7 scenarios (7 passed)
